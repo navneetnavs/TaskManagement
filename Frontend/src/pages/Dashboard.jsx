@@ -191,7 +191,7 @@ const Dashboard = () => {
               {tasks.map(task => (
                 <div 
                   key={task._id} 
-                  className={`flex items-start justify-between p-3 rounded border ${
+                  className={`flex mb-3 items-start justify-between p-3 rounded border ${
                     task.status === 'completed' 
                       ? 'bg-green-50 border-green-200' 
                       : 'bg-white border-gray-200'
