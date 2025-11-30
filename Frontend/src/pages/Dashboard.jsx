@@ -172,7 +172,7 @@ const Dashboard = () => {
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold text-gray-900 mt-2">Your Tasks</h2>
             {tasks.length > 0 && (
-              <span className="px-2 py-1 bg-blue-100 text-blue-600 rounded text-sm mr-2">
+              <span className="px-4 py-1 text-blue-600 text-sm mr-2 w-10">
                 {tasks.length} {tasks.length === 1 ? 'task' : 'tasks'}
               </span>
             )}
