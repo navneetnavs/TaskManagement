@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-// In Vite, environment variables need to be prefixed with VITE_ and accessed via import.meta.env
+
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
 
-// Create axios instance
+
 const api = axios.create({
   baseURL: API_URL,
   headers: {
@@ -11,7 +11,7 @@ const api = axios.create({
   },
 });
 
-// Add a request interceptor to add the auth token to requests
+
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
