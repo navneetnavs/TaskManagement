@@ -24,12 +24,7 @@ const Navbar = () => {
           <nav className="flex items-center space-x-4">
             {user ? (
               <>
-                <Link 
-                  to="/dashboard" 
-                  className="text-gray-700 hover:text-blue-600 font-medium px-3 py-2 rounded-md"
-                >
-                  Dashboard
-                </Link>
+                
                 <div className="flex items-center space-x-2">
                   <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
                     {user.username?.charAt(0).toUpperCase() || 'U'}
