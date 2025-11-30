@@ -102,33 +102,33 @@ const Dashboard = () => {
           </div>
           <button 
             onClick={logout} 
-            className="mt-4 sm:mt-0 px-4 py-2 border border-blue-600 text-blue-600 rounded-md font-medium hover:bg-blue-600 hover:text-white"
+            className="mt-4 sm:mt-0 px-4 py-2 border text-blue-600 rounded-md font-medium hover:bg-red-600 hover:text-white w-20"
           >
             Logout
           </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <div className="bg-white rounded-md shadow p-4 border border-gray-200">
-            <p className="text-gray-600 text-sm">Total Tasks</p>
+          <div className="bg-white rounded-md shadow p-4 border border-gray-200 mb-2">
+            <p className="text-gray-600 text-sm mt-2">Total Tasks</p>
             <p className="text-2xl font-bold text-gray-900 mt-1">{tasks.length}</p>
           </div>
-          <div className="bg-white rounded-md shadow p-4 border border-gray-200">
-            <p className="text-gray-600 text-sm">Completed</p>
+          <div className="bg-white rounded-md shadow p-4 border border-gray-200 mb-2">
+            <p className="text-gray-600 text-sm mt-2">Completed</p>
             <p className="text-2xl font-bold text-green-600 mt-1">
               {tasks.filter(t => t.status === 'completed').length}
             </p>
           </div>
-          <div className="bg-white rounded-md shadow p-4 border border-gray-200">
-            <p className="text-gray-600 text-sm">Pending</p>
+          <div className="bg-white rounded-md shadow p-4 border border-gray-200 mb-2">
+            <p className="text-gray-600 text-sm mt-2">Pending</p>
             <p className="text-2xl font-bold text-orange-600 mt-1">
               {tasks.filter(t => t.status === 'pending').length}
             </p>
           </div>
         </div>
 
-        <div className="bg-white rounded-md shadow p-6 mb-6 border border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Add New Task</h2>
+        <div className="bg-white rounded-md shadow p-6 mb-6 border border-gray-200 mb-3">
+          <h2 className="text-xl font-semibold text-gray-900 mb-3 mt-2">Add New Task</h2>
           {error && (
             <div className="mb-4 bg-red-50 border-l-4 border-red-400 p-4 rounded-lg">
               <p className="text-sm text-red-700">{error}</p>
@@ -143,7 +143,7 @@ const Dashboard = () => {
                 value={newTask.title}
                 onChange={(e) => setNewTask({...newTask, title: e.target.value})}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 mb-3 placeholder:pl-2 "
               />
             </div>
             
@@ -153,24 +153,26 @@ const Dashboard = () => {
                 rows="3"
                 value={newTask.description}
                 onChange={(e) => setNewTask({...newTask, description: e.target.value})}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 resize-none"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 resize-none placeholder:pl-2 mb-2"
               />
             </div>
             
-            <button 
-              type="submit" 
-              className="px-6 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              Add Task
-            </button>
+            <div className="flex justify-center mb-4">
+              <button 
+                type="submit" 
+                className="px-6 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-green-600 w-20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Add Task
+              </button>
+            </div>
           </form>
         </div>
         
-        <div className="bg-white rounded-md shadow p-6 border border-gray-200">
+        <div className="bg-white rounded-md shadow p-6 border border-gray-200 mb-3">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold text-gray-900">Your Tasks</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mt-2">Your Tasks</h2>
             {tasks.length > 0 && (
-              <span className="px-2 py-1 bg-blue-100 text-blue-600 rounded text-sm">
+              <span className="px-2 py-1 bg-blue-100 text-blue-600 rounded text-sm mr-2">
                 {tasks.length} {tasks.length === 1 ? 'task' : 'tasks'}
               </span>
             )}
